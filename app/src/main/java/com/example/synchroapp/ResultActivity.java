@@ -1,14 +1,10 @@
-package com.example.practica_youtube;
+package com.example.synchroapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -18,7 +14,7 @@ public class ResultActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_result);
 
-        TextView textoInicio = findViewById(R.id.textInicio);
+        TextView textoInicio = findViewById(R.id.usuario);
         String usuario = getIntent().getStringExtra("Extra_User");
         textoInicio.setText(usuario);
 

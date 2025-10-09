@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#C8BABA</color>
+    <color name="white">#FFFFFF</color>
     <color name="logo">#1C2564</color>
     <color name="btnInicio">#1C2564</color>
+    <color name="nav">#1C2564</color>
 </resources>
