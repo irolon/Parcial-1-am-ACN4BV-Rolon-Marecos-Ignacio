@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">App Synchro</string>
     <string name="logo_desc">Logo</string>
+    <string name="btnCarrito">Boton Carrito</string>
     <string name="usuario">Usuario</string>
     <string name="sesion">Iniciar Sesion</string>
     <string name="contrasena">Contrasena</string>
@@ -20,4 +21,6 @@
     <string name="relojModelo_4">VION Smart Fit Band</string>
     <string name="relojModelo_5">Aureon Chronos S9</string>
     <string name="relojModelo_6">Aureon Pulse X7</string>
+    <string name="reloj">Reloj</string>
+
 </resources>

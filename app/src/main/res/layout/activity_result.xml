@@ -35,6 +35,7 @@
             android:id="@+id/imageView"
             android:layout_width="39dp"
             android:layout_height="32dp"
+            android:contentDescription="@string/btnCarrito"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"
@@ -60,12 +61,14 @@
             android:id="@+id/imageView4"
             android:layout_width="98dp"
             android:layout_height="56dp"
+            android:contentDescription="@string/logo_desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
+
             app:srcCompat="@drawable/logo" />
 
 
@@ -94,7 +97,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -111,13 +114,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_1" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/relojModelo_1"
                     android:textSize="23sp"
                     android:layout_marginBottom="30dp"
@@ -127,7 +132,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_1"/>
@@ -146,13 +152,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_2" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/relojModelo_2"
                     android:textSize="23sp"
@@ -162,7 +170,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_2"/>
@@ -181,13 +190,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_3" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/relojModelo_3"
                     android:textSize="23sp"
@@ -197,7 +208,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_3"/>
@@ -216,13 +228,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_4" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/relojModelo_4"
                     android:textSize="23sp"
@@ -232,7 +246,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_4"/>
@@ -251,13 +266,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_5" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/relojModelo_5"
                     android:textSize="23sp"
@@ -267,7 +284,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_5"/>
@@ -286,13 +304,15 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"
                     android:elevation="3dp"
+                    android:contentDescription="@string/reloj"
                     android:src="@drawable/img_reloj_6" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/relojModelo_6"
                     android:textSize="23sp"
@@ -302,7 +322,8 @@
                     android:layout_height="match_parent"
                     android:gravity="bottom|center"
                     android:layout_marginBottom="20dp"
-                    android:paddingLeft="176dp"
+                    android:paddingStart="176dp"
+                    android:paddingEnd="0dp"
                     android:textSize="23sp"
                     android:textStyle="bold|italic"
                     android:text="@string/relojPrecio_6"/>

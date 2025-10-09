@@ -73,11 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
+        // Login
         Button btnLogin = findViewById(R.id.btnLogin);
 
 
