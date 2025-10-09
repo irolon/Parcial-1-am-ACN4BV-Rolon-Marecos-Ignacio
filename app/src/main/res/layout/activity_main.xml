@@ -82,35 +82,6 @@
                 android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/chkRemember"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/recordar"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:buttonTint="@color/white"
-                app:useMaterialThemeColors="false" />
-
-
-            <TextView
-                android:id="@+id/olvidar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/olvidar_contra"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-
 
     </LinearLayout>
 
