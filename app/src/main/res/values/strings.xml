@@ -8,6 +8,16 @@
     <string name="olvidar_contra">Olvidar contrasena</string>
     <string name="bienvenido">Bienvenido</string>
     <string name="titulo">Elegi tu companero perfecto</string>
-    <string name="corazon">Btn corazon</string>
-
+    <string name="relojPrecio_1">u$s 150</string>
+    <string name="relojPrecio_2">u$s 100</string>
+    <string name="relojPrecio_3">u$s 200</string>
+    <string name="relojPrecio_4">u$s 70</string>
+    <string name="relojPrecio_5">u$s 190</string>
+    <string name="relojPrecio_6">u$s 110</string>
+    <string name="relojModelo_1">KOROS Active Pro</string>
+    <string name="relojModelo_2">NEOX Titan Ultra</string>
+    <string name="relojModelo_3">AUREX Blue Chrono</string>
+    <string name="relojModelo_4">VION Smart Fit Band</string>
+    <string name="relojModelo_5">Aureon Chronos S9</string>
+    <string name="relojModelo_6">Aureon Pulse X7</string>
 </resources>
