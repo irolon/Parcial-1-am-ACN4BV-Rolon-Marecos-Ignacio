@@ -17,10 +17,13 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     //Manejo de autenticacion
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     private int dp(int value) {
         return (int) TypedValue.applyDimension(
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Inicializacion de la autenticacion
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         // Contenedor LinearLayout horizontal
         LinearLayout form = findViewById(R.id.linearLayout3);
@@ -77,40 +81,48 @@ public class MainActivity extends AppCompatActivity {
 
         // Login
         Button btnLogin = findViewById(R.id.btnLogin);
+        EditText etUsuario = findViewById(R.id.etUsuario);
+        EditText etContrasena = findViewById(R.id.etContrasena);
 
+        btnLogin.setOnClickListener (v-> {
+            String usuario = etUsuario.getText().toString().trim();
+            String pass = etContrasena.getText().toString();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            EditText etUsuario = findViewById(R.id.etUsuario);
-            EditText etContrasena = findViewById(R.id.etContrasena);
-            @Override
-            public void onClick(View v) {
-                String user = etUsuario.getText().toString();
-                String pass = etContrasena.getText().toString();
-
-                if (user.isEmpty() || pass.isEmpty()) {
-                    if (user.isEmpty()) etUsuario.setError("Ingresá tu usuario");
-                    if (pass.isEmpty()) etContrasena.setError("Ingresá tu contraseña");
-                    return;
-                }
-
-                mAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(MainActivity.this, task -> {
-                            if (task.isSuccessful()) {
-                                // Login OK: tomamos el email del usuario logueado
-                                String email = mAuth.getCurrentUser().getEmail();
-
-                                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                                intent.putExtra("Extra_User", email);
-                                startActivity(intent);
-                                Log.i("Btn Inicio Sesion", "Login OK. Usuario: " + email);
-                            } else {
-                                // Login incorrecto: alerta sobre el campo contraseña
-                                etContrasena.setError("Usuario o contraseña incorrectos");
-                            }
-                });
-
-
-
+            if (usuario.isEmpty() || pass.isEmpty()) {
+                if (usuario.isEmpty()) etUsuario.setError("Ingresá tu usuario");
+                if (pass.isEmpty()) etContrasena.setError("Ingresá tu contraseña");
+                return;
             }
+
+            // Busco en Firestore el documento con el campo "usuario" que coincida
+            db.collection("usuarios").whereEqualTo("usuario", usuario).get()
+                    .addOnSuccessListener(querySnapshot -> {
+                        if (querySnapshot.isEmpty()) {
+                            etUsuario.setError("El usuario no existe");
+                            return;
+                        }
+                        // Tomo el documento que coincide ('usuario)
+                        DocumentSnapshot doc = querySnapshot.getDocuments().get(0);
+                        String email = doc.getString("email");
+                        String nombre = doc.getString("nombre");
+
+                        // Con el email encontrado, hago login normal de Firebase
+                        mAuth.signInWithEmailAndPassword(email, pass)
+                                .addOnCompleteListener(MainActivity.this, task -> {
+                                    if (task.isSuccessful()) {
+                                        Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                                        intent.putExtra("Extra_User", nombre);
+                                        startActivity(intent);
+                                        Log.i("Login", "OK. Usuario: " + usuario);
+                                    } else {
+                                        etContrasena.setError("Contraseña incorrecta");
+                                    }
+                                });
+                    })
+                    .addOnFailureListener(e -> {
+                        etUsuario.setError("Error al conectar con la base");
+                        Log.e("Login", "Firestore error", e);
+                    });
         });
 
     }
