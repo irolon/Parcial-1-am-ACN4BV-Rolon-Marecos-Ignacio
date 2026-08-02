@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Márgenes y espacios -->
+    <dimen name="margen_estandar">10dp</dimen>
+    <dimen name="padding_texto">12dp</dimen>
+
+    <!-- Tarjetas de producto -->
+    <dimen name="altura_card">160dp</dimen>
+    <dimen name="tamano_imagen">160dp</dimen>
+
+    <!-- Tamaño del texto -->
+    <dimen name="texto_titulo">30sp</dimen>
+    <dimen name="texto_nombre">18sp</dimen>
+    <dimen name="texto_precio">16sp</dimen>
+</resources>
