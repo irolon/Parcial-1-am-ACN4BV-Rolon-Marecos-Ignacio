@@ -25,7 +25,7 @@
             android:layout_height="@dimen/altura_card"
             android:layout_margin="5dp"
             android:contentDescription="@string/reloj"
-            android:src="@drawable/img_reloj_1" />
+            />
 
         <LinearLayout
             android:layout_width="0dp"

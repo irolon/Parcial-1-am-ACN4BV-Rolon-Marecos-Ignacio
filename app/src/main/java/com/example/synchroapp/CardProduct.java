@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.bumptech.glide.Glide;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,15 +35,13 @@ public class CardProduct extends AppCompatActivity {
         String marca = intent.getStringExtra("marca");
         String detalle = intent.getStringExtra("detalle");
         String precio = intent.getStringExtra("precio");
-        int imagenResId = intent.getIntExtra("imagen", 0);
+        String imagenUrl = intent.getStringExtra("imagen");
 
         RelMarca.setText(marca);
         RelDetalle.setText(detalle);
         RelPrecio.setText(precio);
 
-        if (imagenResId != 0) {
-            imageView.setImageResource(imagenResId);
-        }
+        Glide.with(this).load(imagenUrl).into(imageView);
 
         // Boton Volver
         Button btnVolver = findViewById(R.id.BtnVolver);

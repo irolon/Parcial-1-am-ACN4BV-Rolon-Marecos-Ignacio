@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,10 +40,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         holder.txtMarca.setText(p.getMarca());
         holder.txtPrecio.setText(p.getPrecio());
 
-        // La imagen viene como nombre ("img_reloj_1"); lo convertimos en recurso drawable
-        int idImagen = context.getResources().getIdentifier(
-                p.getImagen(), "drawable", context.getPackageName());
-        holder.imgProducto.setImageResource(idImagen);
+        Glide.with(context).load(p.getImagen()).into(holder.imgProducto);
 
         // Al tocar la tarjeta, abrimos el detalle pasando los datos del producto
         holder.itemView.setOnClickListener(v -> {
@@ -50,7 +48,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             intent.putExtra("marca", p.getMarca());
             intent.putExtra("detalle", p.getDetalle());
             intent.putExtra("precio", p.getPrecio());
-            intent.putExtra("imagen", idImagen);
+            intent.putExtra("imagen", p.getImagen());
             context.startActivity(intent);
         });
     }

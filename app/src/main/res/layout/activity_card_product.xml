@@ -102,7 +102,6 @@
                 android:layout_marginTop="92dp"
                 android:contentDescription="@string/reloj"
                 android:elevation="3dp"
-                android:src="@drawable/img_reloj_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
