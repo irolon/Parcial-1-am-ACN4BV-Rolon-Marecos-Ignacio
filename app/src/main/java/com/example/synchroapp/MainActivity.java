@@ -125,5 +125,11 @@ public class MainActivity extends AppCompatActivity {
                     });
         });
 
+        Button btnCrearCuenta = findViewById(R.id.btnCrearCuenta);
+        btnCrearCuenta.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

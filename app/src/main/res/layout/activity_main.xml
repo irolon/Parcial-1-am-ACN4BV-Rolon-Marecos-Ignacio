@@ -7,10 +7,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_pantalla_inicio"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="321dp"
+        android:layout_width="414dp"
+        android:layout_height="258dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,26 +19,36 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="258dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:contentDescription="@string/logo_desc"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/logo"
             app:tint="@color/btnInicio" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="393dp"
-        android:layout_height="211dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="410dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/txtIniciarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Iniciar Sesion"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -90,18 +101,31 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="308dp"
-        android:layout_height="82dp"
+        android:layout_width="295dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="52dp"
         android:layout_weight="1"
         android:backgroundTint="@color/btnInicio"
         android:text="@string/sesion"
-        android:textSize="20sp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="295dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:text="Crear cuenta"
+        android:textColor="@color/btnInicio"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.287" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
