@@ -118,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
                                         etContrasena.setError("Contraseña incorrecta");
                                     }
                                 });
-                    })
-                    .addOnFailureListener(e -> {
+                    }).addOnFailureListener(e -> {
                         etUsuario.setError("Error al conectar con la base");
                         Log.e("Login", "Firestore error", e);
                     });

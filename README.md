@@ -1,74 +1,56 @@
-# Synchro App – E‑Commerce de relojes inteligentes
+Synchro App – E‑Commerce de relojes inteligentes
 
-La aplicación simula un pequeño comercio electrónico de relojes inteligentes desarrollado en Android con Java y los componentes de Material Design.
+Aplicación móvil para Android (Java) que simula una tienda online de relojes inteligentes. Incluye registro e inicio de sesión con Firebase, un catálogo dinámico traído desde Cloud Firestore e imágenes cargadas desde una URL con la biblioteca Glide.
 
-## 📱 Descripción general
+📱 Descripción general
+Inicio de sesión: login por nombre de usuario. La app busca el usuario en Cloud Firestore, obtiene el email asociado y valida la contraseña contra Firebase Authentication. Incluye un checkbox “Recordar” y un texto “Olvidar contraseña” a modo ilustrativo.
+Registro: desde el botón “Crear cuenta” se accede a una pantalla que da de alta un nuevo usuario en Firebase Authentication y guarda sus datos (usuario, nombre, email) en la colección usuarios de Firestore.
+Catálogo: tras iniciar sesión aparece la lista de smartwatches, que se lee de la colección productos de Firestore y se muestra con un RecyclerView. Cada tarjeta muestra la imagen (descargada desde una URL con Glide), el nombre y el precio. También hay un ícono de carrito con un badge que indica la cantidad de productos agregados.
+Detalle del producto: al pulsar una tarjeta se navega a la vista detallada con la foto ampliada, el nombre, la descripción y el precio. Tiene un botón Comprar (agrega el producto al carrito, muestra un Toast y actualiza el badge) y un botón Volver.
+🧭 Navegación y flujo de la aplicación
+Inicio de sesión: ingresá tu nombre de usuario y contraseña y pulsá Iniciar Sesión. Si no tenés cuenta, tocá Crear cuenta.
+Registro: completá usuario, nombre, email y contraseña (mínimo 6 caracteres) y pulsá Registrarme. La cuenta se crea y volvés al login.
+Catálogo: aparece un encabezado «Bienvenido» con tu nombre y la lista de relojes traída de Firestore. Podés desplazarte verticalmente.
+Detalle y compra: tocá una tarjeta para ver la descripción. Con Comprar se suma el producto al carrito (Toast + badge rojo con la cantidad). Con Volver regresás al catálogo.
+🛠️ Tecnologías y librerías utilizadas
+Java como lenguaje principal, sobre Android Studio.
+Android SDK 36 (minSdk 29). Requiere Android 10 o superior y conexión a internet.
+Firebase Authentication para el registro y el inicio de sesión (email + contraseña).
+Cloud Firestore como base de datos NoSQL en la nube (colecciones usuarios y productos).
+Glide para descargar y mostrar las imágenes de los productos desde una URL.
+RecyclerView con su Adapter y ViewHolder para la lista dinámica de productos.
+Material Design Components, ConstraintLayout, LinearLayout y CardView para las vistas.
+Recursos XML organizados en strings.xml, colors.xml y dimens.xml.
+🚀 Puesta en marcha
 
-* **Pantalla de inicio de sesión:** se solicita un usuario y una contraseña. Cuando ambos campos contienen algún valor, se habilita el acceso a la tienda. También incorpora un checkbox “Recordar” y un texto “Olvidar contraseña” a modo ilustrativo.
-* **Listado de productos:** tras iniciar sesión aparece un catálogo de seis smartwatches. Cada elemento se presenta en una tarjeta con la imagen del producto, su nombre y el precio. La pantalla es scrollable para ver todos los productos disponibles.
-* **Detalle del producto:** al pulsar sobre cualquier tarjeta se navega a una vista detallada que muestra la foto ampliada, el nombre, una descripción breve y el precio. Esta pantalla ofrece un botón verde **COMPRAR** que simula la acción de compra: muestra un mensaje de éxito (Toast) y actualiza el contador de ítems en el ícono del carrito.
+Para probar la aplicación en Android Studio:
 
-## 🧭 Navegación y flujo de la aplicación
-
-1.  **Inicio de sesión:** Introduce cual quier texto en los campos Usuario y Contraseña y pulsa Iniciar Sesión.
-2.  **Catálogo:** Aparecerá un encabezado con el mensaje «Bienvenido». Puedes desplazarte verticalmente para ver todas las opciones.
-3.  **Detalle y Compra:** Toca una tarjeta para ver su descripción.
-    * Al presionar **COMPRAR**, aparecerá un *Toast* verde indicando "Producto agregado" y el ícono del carrito mostrará un **badge rojo con la cantidad** de productos acumulados.
-    * Puedes usar el botón **Volver** para regresar al catálogo y seleccionar otro reloj.
-
-
-## 🛠️ Tecnologías y librerías utilizadas
-
-- **Java 11** como lenguaje principal.
-- **Android SDK 36** (minSdk 29).  Es necesario un dispositivo/emulador con Android 10 o superior.
-- **Material Design Components** para los campos de entrada y botones.
-- **ConstraintLayout**, **LinearLayout** y **ScrollView** para el diseño de las vistas.
-- **CardView** para presentar cada producto.
-- **Recursos XML**: las vistas se definen en `app/src/main/res/layout` y los textos en `strings.xml`.  Las imágenes de los relojes se encuentran en `app/src/main/res/drawable`.
-
-## 🚀 Puesta en marcha
-
-Para probar la aplicación en un entorno local se recomienda utilizar **Android Studio**:
-
-1. Clona este repositorio o descarga los archivos como ZIP.
-2. Abre Android Studio y selecciona **Open an existing project** indicando la carpeta del proyecto.
-3. Espera a que el IDE resuelva las dependencias de Gradle.  El fichero `build.gradle.kts` ya declara todas las librerías necesarias.
-4. Elige un dispositivo virtual (AVD) o conecta un dispositivo físico con Android 10+ y pulsa **Run** para compilar e instalar la aplicación.
-
-No es necesario configurar una base de datos ni servicios externos; todos los datos de usuarios y productos están codificados localmente.
-
-## 🧭 Navegación y flujo de la aplicación
-
-1. **Inicio de sesión:** Introduce cualquier texto en los campos **Usuario** y **Contraseña** y pulsa **Iniciar Sesión**.  Si algún campo está vacío, no se realizará ninguna acción.
-2. **Catálogo:** Aparecerá un encabezado con el mensaje «Bienvenido» seguido del nombre de usuario ingresado.  A continuación se muestran las tarjetas de productos.  Puedes desplazarte verticalmente para ver todas las opciones.
-3. **Detalle:** Toca una tarjeta para ver su descripción.  Desde aquí puedes regresar con el botón **Volver**.  El botón **COMPRAR** está diseñado a modo decorativo y no lanza ningún flujo de pago.
-
-## 📁 Estructura del proyecto
-
-```
-Parcial-2-am-ACN4BV-Rolon-Marecos-Ignacio/
+Cloná este repositorio y abrilo con Open an existing project.
+Como el proyecto usa Firebase, colocá tu propio archivo google-services.json dentro de la carpeta app/. Ese archivo se obtiene desde la consola de Firebase, con Authentication (Email/Password) y Cloud Firestore habilitados en el proyecto.
+Esperá a que Gradle resuelva las dependencias (ya están declaradas en build.gradle.kts).
+Elegí un emulador o dispositivo con Android 10+ y conexión a internet, y pulsá Run.
+📁 Estructura del proyecto
+final-am-acn4b-rolon-marecos-ignacio/
 ├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/example/synchroapp/
-│   │   │   │   ├── MainActivity.java      // Pantalla de inicio de sesión
-│   │   │   │   ├── ResultActivity.java    // Muestra el catálogo de productos
-│   │   │   │   └── CardProduct.java       // Presenta el detalle de un producto
-│   │   │   │   └── CardManager.java       // Logica del carrito   
-│   │   │   └── res/
-│   │   │       ├── layout/
-│   │   │       │   ├── activity_main.xml      // Diseño de la pantalla de login
-│   │   │       │   ├── activity_result.xml    // Diseño del catálogo
-│   │   │       │   └── activity_card_product.xml // Diseño de la vista de detalle
-│   │   │       │   └── toast_custom.xml       //  Diseño toast
-│   │   │       ├── drawable/               // Imágenes y fondos
-│   │   │       └── values/                 // strings.xml, colors.xml, themes
+│   ├── src/main/
+│   │   ├── java/com/example/synchroapp/
+│   │   │   ├── MainActivity.java       // Login (busca el usuario en Firestore + Auth)
+│   │   │   ├── RegisterActivity.java   // Registro (alta en Auth + guardado en Firestore)
+│   │   │   ├── ResultActivity.java     // Catálogo (lee productos de Firestore, RecyclerView)
+│   │   │   ├── ProductoAdapter.java    // Adaptador del RecyclerView
+│   │   │   ├── CardProduct.java         // Detalle del producto y acción de compra
+│   │   │   ├── Producto.java            // Clase modelo (producto)
+│   │   │   ├── Usuario.java             // Clase modelo (usuario)
+│   │   │   └── CartManager.java         // Lógica del carrito
+│   │   ├── res/
+│   │   │   ├── layout/                  // activity_main, activity_register,
+│   │   │   │                            // activity_result, activity_card_product, item_producto
+│   │   │   ├── drawable/                // Logo, fondos e íconos
+│   │   │   └── values/                  // strings.xml, colors.xml, dimens.xml, themes
+│   │   ├── google-services.json         // Configuración de Firebase (agregar el propio)
 │   │   └── AndroidManifest.xml
 │   └── build.gradle.kts
 └── settings.gradle.kts
-```
+👤 Autor
 
-
-## Autor
-**Ignacio Rolon Marecos**  
-Proyecto desarrollado como parte de la plataforma Synchro.
+Ignacio Rolón Marecos — Trabajo final de Aplicaciones Móviles.
